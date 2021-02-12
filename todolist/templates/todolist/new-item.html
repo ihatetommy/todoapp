@@ -1,0 +1,17 @@
+{% block title %}Add a new ToDo item{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div >
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Add Item.</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div >
+                <button type="submit">Post</button>
+                <a href="{% url 'item-list' %}">back</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

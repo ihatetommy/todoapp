@@ -1,0 +1,15 @@
+{% block title %}<title>Delete Todo Item</title>{% endblock %}
+{% block content %}
+    <div >
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Delete Item: {{ item.title }}</legend>
+            </fieldset>
+            <div >
+                <button type="submit">Delete</button>
+                <a href="{% url 'item-list' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

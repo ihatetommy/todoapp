@@ -1,0 +1,25 @@
+{% extends 'todolist/base.html' %}
+{% block body %}
+<h1>ToDo List</h1>
+<a href="{% url 'item-new' %}"><button>Add an item</button></a>
+<h3>Your List: </h3>
+{% if items %}
+<ul>
+    {% for item in items %}
+        <li>
+        	<big>{{ item.title|title }}</big> - written on {{ item.date_posted }}
+        	<span>
+	            <a href="{% url 'item-edit' item.id %}" ><button>Edit</button></a>
+	            <a href="{% url 'item-delete' item.id %}"><button>Delete</button></a>
+	        </span>
+            <br>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <div>
+        <small>Add your first item through the link above.</small>
+    </div>
+    <h1>You have no item.</h1>
+{% endif %}
+{% endblock %}
