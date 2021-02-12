@@ -16,4 +16,4 @@ This is a Django Project
 6. Open http://localhost:8000/ in your browser.
 7. Enjoy.
 
-P.S: I suck at HTML and CSS; please don't judge me.
+P.S: This is my first django project and I suck at HTML and CSS; please don't judge me.
